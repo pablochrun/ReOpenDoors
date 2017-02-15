@@ -5,8 +5,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -63,7 +65,7 @@ public class LoginMain extends AppCompatActivity {
             //NEW ACTIVITY TO ADMIN DOORs PASSWORDS.
         }
         else{
-            showCustomToast(R.string.error_login, Toast.LENGTH_LONG, R.color.colorErrorLogin);
+            showCustomToast(R.string.error_login, 500, R.color.colorErrorLogin);
         }
     }
 
@@ -76,9 +78,7 @@ public class LoginMain extends AppCompatActivity {
         Typeface font = Typeface.createFromAsset(getAssets(), "JLSSpaceGothicR_NC.otf");
         text.setTypeface(font);
 
-
-
-        Toast customToast=new Toast(this);
+        final Toast customToast=new Toast(this);
         customToast.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM,0, 0);
         customToast.setDuration(duration);
         customToast.setView(customToastView);

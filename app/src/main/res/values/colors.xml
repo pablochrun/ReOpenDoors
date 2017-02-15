@@ -7,4 +7,7 @@
     <color name="loginScreenBackground">#000000</color>
     <color name="colorErrorLogin">#8A0707</color>
 
+    <color name="toast_gradient_start">#363D34</color>
+    <color name="toast_gradient_end">#000000</color>
+
 </resources>
