@@ -4,7 +4,7 @@
     android:id="@+id/activity_login_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="re.pablochrun.com.reopendoors.LoginMain"
+    tools:context="re.pablochrun.com.reopendoors.ihm.LoginMain"
     android:background="@color/loginScreenBackground">
 
 
@@ -37,7 +37,7 @@
             android:background="@drawable/login_background_drawable"
             android:layout_margin="5dp"
             android:textAlignment="gravity"
-            android:onClick="checkLogin()"
+            android:onClick="checkLogin"
             />
     </RelativeLayout>
 

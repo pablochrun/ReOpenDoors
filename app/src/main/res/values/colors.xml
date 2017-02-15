@@ -5,5 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorLogin">#5AC73F</color>
     <color name="loginScreenBackground">#000000</color>
+    <color name="colorErrorLogin">#8A0707</color>
 
 </resources>

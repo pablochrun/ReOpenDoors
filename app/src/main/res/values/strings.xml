@@ -2,4 +2,5 @@
     <string name="app_name">ReOpenDoors</string>
     <string name="login_text">LOGIN</string>
     <string name="LOGIN_PASS">111111</string>
+    <string name="error_login">CREDENCIALES INCORRECTAS. \nACCESO DENEGADO.</string>
 </resources>
