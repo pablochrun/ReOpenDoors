@@ -17,11 +17,13 @@
             android:id="@+id/etPassword"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
+            android:inputType="numberPassword"
             android:textSize="40sp"
+            android:maxLength="6"
             android:textColor="@color/colorLogin"
             android:background="@drawable/login_background_drawable"
-            android:="5dp"
+            android:layout_margin="5dp"
+            android:gravity="center_horizontal"
             />
 
         <Button
@@ -33,7 +35,9 @@
             android:layout_below="@id/etPassword"
             android:textColor="@color/colorLogin"
             android:background="@drawable/login_background_drawable"
-            android:paddingTop="5dp"
+            android:layout_margin="5dp"
+            android:textAlignment="gravity"
+            android:onClick="checkLogin()"
             />
     </RelativeLayout>
 
