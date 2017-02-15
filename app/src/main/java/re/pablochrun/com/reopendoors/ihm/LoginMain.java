@@ -24,6 +24,7 @@ import re.pablochrun.com.reopendoors.R;
 public class LoginMain extends AppCompatActivity {
 
     public String LOGIN_PASS;
+    public int ADMIN_DOOR_PASSWORDS = 1;
 
     public LoginMain() {
     }
@@ -65,7 +66,7 @@ public class LoginMain extends AppCompatActivity {
                 && Integer.parseInt(password)==passStored){
             //NEW ACTIVITY TO ADMIN DOORs PASSWORDS.
             Intent adminPasswords = new Intent(this, AdminDoorPasswords.class);
-            startActivity(adminPasswords);
+            startActivityForResult(adminPasswords,ADMIN_DOOR_PASSWORDS);
         }
         else{
             showCustomToast(R.string.error_login, 500, R.color.colorErrorLogin);
