@@ -3,6 +3,8 @@
     <string name="login_text">LOGIN</string>
     <string name="LOGIN_PASS">111111</string>
     <string name="error_login">INCORRECT CREDENTIALS. \nACCES DENIED</string>
-    <string name="Door_ID">Door ID: </string>
-    <string name="Pass_door_ID">New Password: </string>
+    <string name="door_ID_1">Puerta 1: </string>
+    <string name="door_ID_2">Puerta 2: </string>
+    <string name="ok_admin">Acept</string>
+    <string name="cancel_admin">Cancel</string>
 </resources>
