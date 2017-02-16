@@ -43,12 +43,14 @@ public class MainScreen extends AppCompatActivity {
         super.onStart();
         Log.d("START","start");
 
+        /*TODO: When selector is implemented
         if(checkDoorsConfigured()){
             allowReleaseTVirus();
         }
         else{
             disableReleaseTVirus();
         }
+        */
     }
 
     @Override
@@ -69,6 +71,9 @@ public class MainScreen extends AppCompatActivity {
         Log.d("DESTROY","destroy");
     }
 
+    /*
+    For use when selectos will be implemented. Until then, enable/disable isn't visible.
+     */
     private void allowReleaseTVirus() {
         releaseVirus.setEnabled(true);
     }
@@ -85,11 +90,14 @@ public class MainScreen extends AppCompatActivity {
 
     public void adminPass(View v){
         Intent adminDoors = new Intent(this, AdminDoorPasswords.class);
-        startActivityForResult(adminDoors,RE_PABLOCHRUN_COM_REOPENDOORS_IHM_ADMINDOORS);
+        //startActivityForResult(adminDoors,RE_PABLOCHRUN_COM_REOPENDOORS_IHM_ADMINDOORS);
+        startActivity(adminDoors);
     }
 
+    /*
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode,resultCode,data);
         if(requestCode == RE_PABLOCHRUN_COM_REOPENDOORS_IHM_ADMINDOORS){
             if(checkDoorsConfigured()){
                 allowReleaseTVirus();
@@ -99,6 +107,7 @@ public class MainScreen extends AppCompatActivity {
             }
         }
     }
+    */
 
     public boolean checkDoorsConfigured(){
         boolean configured = false;
@@ -115,6 +124,9 @@ public class MainScreen extends AppCompatActivity {
 
     public void startGame(){
         Log.d("Click","click start game");
+
+
+
     }
 
 }

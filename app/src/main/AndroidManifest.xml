@@ -16,7 +16,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ihm.AdminDoorPasswords" />
-        <activity android:name=".ihm.MainScreen"></activity>
+        <activity android:name=".ihm.MainScreen" />
+        <activity android:name=".ihm.CountdownStarted"></activity>
     </application>
 
 </manifest>
