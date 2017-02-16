@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <solid
-        android:color="@color/loginScreenBackground" />
+        android:color="@color/loginScreenBackgroundPressed" />
     <stroke
         android:width="1dp"
-        android:color="@color/colorLogin" />
+        android:color="@color/colorLoginPressed" />
     <padding
         android:left="1dp"
         android:top="1dp"

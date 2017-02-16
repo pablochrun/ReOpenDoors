@@ -3,8 +3,14 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
     <color name="colorLogin">#5AC73F</color>
     <color name="loginScreenBackground">#000000</color>
+    <color name="colorLoginDisabled">#E0E0E0</color>
+    <color name="loginScreenBackgroundDisabled">#000000</color>
+    <color name="colorLoginPressed">#006600</color>
+    <color name="loginScreenBackgroundPressed">#000000</color>
+
     <color name="colorErrorLogin">#8A0707</color>
 
     <color name="toast_gradient_start">#363D34</color>

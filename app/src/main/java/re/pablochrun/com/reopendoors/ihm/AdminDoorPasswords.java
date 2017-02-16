@@ -50,7 +50,7 @@ public class AdminDoorPasswords extends Activity {
     }
 
     public void cancelAdmin(View v){
-        finish();
+        setResult(MainScreen.CONFIG_CANCEL);
     }
 
     public void confirmAdmin(View v){
@@ -62,6 +62,7 @@ public class AdminDoorPasswords extends Activity {
             editor.putInt(MainScreen.DOOR_1, Integer.parseInt(et1.getText().toString()));
             editor.putInt(MainScreen.DOOR_2, Integer.parseInt(et2.getText().toString()));
             editor.commit();
+            setResult(MainScreen.CONFIG_OK);
         }
         else{
             showCustomToast(R.string.securityIncomplet,5,R.color.colorErrorLogin);

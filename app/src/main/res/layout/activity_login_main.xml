@@ -39,6 +39,7 @@
             android:textAlignment="gravity"
             android:onClick="checkLogin"
             />
+        <!--style="@style/buttonLoginStyle"-->
     </RelativeLayout>
 
 </RelativeLayout>
