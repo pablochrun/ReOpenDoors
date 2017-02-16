@@ -23,8 +23,7 @@ import re.pablochrun.com.reopendoors.R;
 
 public class LoginMain extends AppCompatActivity {
 
-    public String LOGIN_PASS;
-    public int ADMIN_DOOR_PASSWORDS = 1;
+    public final String LOGIN_PASS="LOGIN";
 
     public LoginMain() {
     }
@@ -32,7 +31,6 @@ public class LoginMain extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        LOGIN_PASS = getResources().getString(R.string.login_text);
         setContentView(R.layout.activity_login_main);
         initPreferences();
         setFont();
@@ -65,8 +63,8 @@ public class LoginMain extends AppCompatActivity {
         if( password != null && !password.equals("")
                 && Integer.parseInt(password)==passStored){
             //NEW ACTIVITY TO ADMIN DOORs PASSWORDS.
-            Intent adminPasswords = new Intent(this, AdminDoorPasswords.class);
-            startActivityForResult(adminPasswords,ADMIN_DOOR_PASSWORDS);
+            Intent mainScreen = new Intent(this, MainScreen.class);
+            startActivity(mainScreen);
         }
         else{
             showCustomToast(R.string.error_login, 500, R.color.colorErrorLogin);
@@ -89,4 +87,7 @@ public class LoginMain extends AppCompatActivity {
         customToast.show();
     }
 
+    public void onActivityResult(){
+
+    }
 }

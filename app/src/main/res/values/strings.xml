@@ -7,4 +7,7 @@
     <string name="door_ID_2">Puerta 2: </string>
     <string name="ok_admin">Aceptar</string>
     <string name="cancel_admin">Cancelar</string>
+    <string name="startGame">Liberar T-Virus</string>
+    <string name="releasingVirus">Liberando T-Virus...</string>
+    <string name="securityIncomplet">Seguridad incompleta.\nCompruebe todas las puertas.</string>
 </resources>
