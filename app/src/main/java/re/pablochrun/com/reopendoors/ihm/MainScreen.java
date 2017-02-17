@@ -122,9 +122,10 @@ public class MainScreen extends AppCompatActivity {
         return configured;
     }
 
-    public void startGame(){
+    public void startGame(View v){
         Log.d("Click","click start game");
-
+        Intent i = new Intent(this,DoorOnePass.class);
+        startActivity(i);
 
 
     }

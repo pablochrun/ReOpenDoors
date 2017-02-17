@@ -10,4 +10,7 @@
     <string name="startGame">Liberar T-Virus</string>
     <string name="releasingVirus">Liberando T-Virus...</string>
     <string name="securityIncomplet">Seguridad incompleta.\nCompruebe todas las puertas.</string>
+    <string name="gridText">_</string>
+    <string name="tvScreenPassHint">Introduzca password</string>
+    <string name="umbrellaCorp">Umbrella Corp.\nPropagando T-Virus\n...</string>
 </resources>

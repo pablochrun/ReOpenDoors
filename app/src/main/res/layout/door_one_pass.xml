@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/loginScreenBackground">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:background="@color/doorScreenText"
+        >
+
+        <ImageView
+            android:id="@+id/imageUmbrellaInPassScreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/umbrella_corp"
+            android:onClick="adminPass"/>
+
+        <TextView
+            android:id="@+id/textScreenUC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@id/imageUmbrellaInPassScreen"
+            android:textSize="10sp"
+            android:text="@string/umbrellaCorp"
+            android:textColor="@color/gridItemNumber"
+            />
+
+
+        <TextView
+            android:id="@+id/textScreenPass"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="@color/gridItemNumber"
+            android:hint="@string/tvScreenPassHint"
+            android:textColorHint="@color/gridItemNumber"
+            android:gravity="bottom|left"
+            android:textSize="40sp"
+            android:layout_toRightOf="@id/imageUmbrellaInPassScreen"/>
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
+        >
+
+        <GridView
+            android:id="@+id/gridView1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="3"
+            android:layout_centerInParent="true"
+            >
+
+        </GridView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- Place countdown here -->
+    </RelativeLayout>
+
+
+
+</LinearLayout>
