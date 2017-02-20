@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <stroke
+        android:width="1dp"
+        android:color="@color/select_game" />
+    <padding
+        android:left="1dp"
+        android:top="1dp"
+        android:right="1dp"
+        android:bottom="1dp" />
+    <gradient
+        android:startColor="@color/toast_gradient_start"
+        android:endColor="@color/toast_gradient_end"
+        android:angle="-90"/>
+</shape>

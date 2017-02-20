@@ -63,8 +63,9 @@ public class LoginMain extends AppCompatActivity {
         if( password != null && !password.equals("")
                 && Integer.parseInt(password)==passStored){
             //NEW ACTIVITY TO ADMIN DOORs PASSWORDS.
-            Intent mainScreen = new Intent(this, MainScreen.class);
-            startActivity(mainScreen);
+            //Intent mainScreen = new Intent(this, MainScreen.class);
+            Intent gameSelectorScreen = new Intent(this, GameSelectorScreen.class);
+            startActivity(gameSelectorScreen);
         }
         else{
             showCustomToast(R.string.error_login, 500, R.color.colorErrorLogin);

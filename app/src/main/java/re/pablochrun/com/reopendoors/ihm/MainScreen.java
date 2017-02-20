@@ -90,6 +90,7 @@ public class MainScreen extends AppCompatActivity {
 
     public void adminPass(View v){
         Intent adminDoors = new Intent(this, AdminDoorPasswords.class);
+        adminDoors.putExtra("escapeRoom",true);
         //startActivityForResult(adminDoors,RE_PABLOCHRUN_COM_REOPENDOORS_IHM_ADMINDOORS);
         startActivity(adminDoors);
     }

@@ -2,6 +2,7 @@ package re.pablochrun.com.reopendoors.ihm;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -24,27 +25,45 @@ public class AdminDoorPasswords extends Activity {
     EditText et1;
     EditText et2;
 
+    boolean escapeRoomMode;
+
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.admin_door_passwords);
-        setFont();
+        Intent i = getIntent();
+        escapeRoomMode = i.getBooleanExtra("escapeRoom",false);
+
+        if(escapeRoomMode) {
+            setContentView(R.layout.admin_door_one_password);
+        }
+        else{
+            setContentView(R.layout.admin_door_two_password);
+        }
+
+        setFont(escapeRoomMode);
     }
 
-    public void setFont(){
-        TextView tv1 = (TextView) findViewById(R.id.puerta_1);
-        TextView tv2 = (TextView) findViewById(R.id.puerta_2);
+    public void setFont(boolean escapeRoomMode){
 
-        et1 = (EditText) findViewById(R.id.puerta_1_pass);
-        et2 = (EditText) findViewById(R.id.puerta_2_pass);
+        Typeface font;
+        if(escapeRoomMode){
+            TextView tv1 = (TextView) findViewById(R.id.puerta_1);
+            et1 = (EditText) findViewById(R.id.puerta_1_pass);
+            font = Typeface.createFromAsset(getAssets(), "JLSSpaceGothicR_NC.otf");
+            tv1.setTypeface(font);
+            et1.setTypeface(font);
+
+        }
+        else{
+            TextView tv2 = (TextView) findViewById(R.id.puerta_2);
+            et2 = (EditText) findViewById(R.id.puerta_2_pass);
+            font = Typeface.createFromAsset(getAssets(), "JLSSpaceGothicR_NC.otf");
+            tv2.setTypeface(font);
+            et2.setTypeface(font);
+        }
 
         Button cancel = (Button) findViewById(R.id.cancelAdminPass);
         Button ok = (Button) findViewById(R.id.okAdminPass);
 
-        Typeface font = Typeface.createFromAsset(getAssets(), "JLSSpaceGothicR_NC.otf");
-        tv1.setTypeface(font);
-        tv2.setTypeface(font);
-        et1.setTypeface(font);
-        et2.setTypeface(font);
         cancel.setTypeface(font);
         ok.setTypeface(font);
     }
@@ -55,19 +74,30 @@ public class AdminDoorPasswords extends Activity {
     }
 
     public void confirmAdmin(View v){
-        if(et1.getText() != null && et2.getText() != null
-                && !et1.getText().toString().equals("")
-                && !et2.getText().toString().equals("")) {
-            SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putInt(MainScreen.DOOR_1, Integer.parseInt(et1.getText().toString()));
-            editor.putInt(MainScreen.DOOR_2, Integer.parseInt(et2.getText().toString()));
-            editor.commit();
-            //setResult(MainScreen.CONFIG_OK);
-            finish();
+
+        if(escapeRoomMode){
+            if(et1.getText() != null && !et1.getText().toString().equals("")) {
+                SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putInt(MainScreen.DOOR_1, Integer.parseInt(et1.getText().toString()));
+                editor.commit();
+                finish();
+            }
+            else{
+                showCustomToast(R.string.securityIncomplet,5,R.color.colorErrorLogin);
+            }
         }
         else{
-            showCustomToast(R.string.securityIncomplet,5,R.color.colorErrorLogin);
+            if(et2.getText() != null && !et1.getText().toString().equals("")) {
+                SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putInt(MainScreen.DOOR_2, Integer.parseInt(et2.getText().toString()));
+                editor.commit();
+                finish();
+            }
+            else{
+                showCustomToast(R.string.securityIncomplet,5,R.color.colorErrorLogin);
+            }
         }
     }
 
