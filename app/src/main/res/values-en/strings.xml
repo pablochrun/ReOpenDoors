@@ -15,6 +15,9 @@
     <string name="tvScreenPassHint">Enter password</string>
     <string name="umbrellaCorp">Umbrella Corp.\nSpreading T-Virus\nStarting countdown 60 minutes</string>
     <string name="upperMessage">Door locked.\nRestringed access.</string>
+    <string name="spreadingIn">Spreading T-Virus in : %1$s</string>
+
+    <string name="infectados">You are infected.</string>
 
 
     <string name="escape_room">ESCAPE ROOM</string>
