@@ -6,14 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import re.pablochrun.com.reopendoors.R;
 import re.pablochrun.com.reopendoors.ihm.DoorOnePass;
-import re.pablochrun.com.reopendoors.ihm.MainScreen;
+import re.pablochrun.com.reopendoors.ihm.DoorPassParent;
 
 /**
  * Created by pablo.covarrubias on 17/02/2017.
@@ -26,10 +23,10 @@ public class CustomGridAdapter extends BaseAdapter {
     int [] imageId;
     private static LayoutInflater inflater=null;
 
-    public CustomGridAdapter(DoorOnePass doorOnePass, String[] values, int[] prgmImages) {
+    public CustomGridAdapter(DoorPassParent doorPassParent, String[] values, int[] prgmImages) {
         // TODO Auto-generated constructor stub
         result=values;
-        context=doorOnePass;
+        context=doorPassParent;
         imageId=prgmImages;
         inflater = ( LayoutInflater )context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -79,7 +76,7 @@ public class CustomGridAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                ((DoorOnePass)context).onClickGridItem(result[position]);
+                ((DoorPassParent)context).onClickGridItem(result[position]);
             }
         });
 

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ReOpenDoors</string>
+    <string name="app_name">Closed Doors</string>
     <string name="login_text">LOGIN</string>
     <string name="LOGIN_PASS">111111</string>
     <string name="error_login">CREDENCIALES INCORRECTAS. \nACCESO DENEGADO.</string>
@@ -8,11 +8,13 @@
     <string name="ok_admin">Aceptar</string>
     <string name="cancel_admin">Cancelar</string>
     <string name="startGame">Liberar T-Virus</string>
+    <string name="startGame2">Iniciar desbloqueo de puerta</string>
     <string name="releasingVirus">Liberando T-Virus...</string>
     <string name="securityIncomplet">Seguridad incompleta.\nCompruebe la contraseña.</string>
     <string name="gridText">_</string>
     <string name="tvScreenPassHint">Introduzca password</string>
-    <string name="umbrellaCorp">Umbrella Corp.\nPropagando T-Virus\n...</string>
+    <string name="umbrellaCorp">Umbrella Corp.\nPropagando T-Virus\nIniciando cuenta atrás de 60minutos</string>
+    <string name="upperMessage">Puerta bloqueada.\nAccesibilidad limitada.</string>
 
     <string name="escape_room">ESCAPE ROOM</string>
     <string name="juego_2_name">JUEGO_2_NAME</string>

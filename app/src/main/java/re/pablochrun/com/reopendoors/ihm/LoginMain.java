@@ -63,7 +63,7 @@ public class LoginMain extends AppCompatActivity {
         if( password != null && !password.equals("")
                 && Integer.parseInt(password)==passStored){
             //NEW ACTIVITY TO ADMIN DOORs PASSWORDS.
-            //Intent mainScreen = new Intent(this, MainScreen.class);
+            //Intent mainScreen = new Intent(this, MainScreenGames.class);
             Intent gameSelectorScreen = new Intent(this, GameSelectorScreen.class);
             startActivity(gameSelectorScreen);
         }

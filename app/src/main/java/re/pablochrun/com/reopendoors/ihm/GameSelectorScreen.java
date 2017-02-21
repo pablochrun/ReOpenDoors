@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import re.pablochrun.com.reopendoors.R;
 
@@ -63,13 +62,14 @@ public class GameSelectorScreen extends AppCompatActivity {
     }
 
     public void startEscapeRoom(View v){
-        Intent mainScreen = new Intent(this, MainScreen.class);
+        Intent mainScreen = new Intent(this, MainScreenGames.class);
+        mainScreen.putExtra("escapeRoom",true);
         startActivity(mainScreen);
     }
 
     public void startGame2(View v){
-        //TODO: To change for load second game
-        Intent mainScreen = new Intent(this, MainScreen.class);
+        Intent mainScreen = new Intent(this, MainScreenGames.class);
+        mainScreen.putExtra("escapeRoom",false);
         startActivity(mainScreen);
     }
 }

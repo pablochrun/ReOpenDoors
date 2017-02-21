@@ -12,7 +12,7 @@ import android.widget.Button;
 
 import re.pablochrun.com.reopendoors.R;
 
-public class MainScreen extends AppCompatActivity {
+public class MainScreenGames extends AppCompatActivity {
 
     public final int RE_PABLOCHRUN_COM_REOPENDOORS_IHM_ADMINDOORS=1;
 
@@ -22,14 +22,18 @@ public class MainScreen extends AppCompatActivity {
     public static final int CONFIG_OK=1;
     public static final int CONFIG_CANCEL=2;
 
-    public Button releaseVirus;
+    public Button startGame;
+
+    boolean escapeRoom;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_screen);
-        setFont();
-        releaseVirus = (Button) findViewById(R.id.btnStartGame);
+        setContentView(R.layout.activity_main_screen_games);
+        Intent i = getIntent();
+        escapeRoom = i.getBooleanExtra("escapeRoom",false);
+        //startGame = (Button) findViewById(R.id.btnStartGame);
+
     }
 
     @Override
@@ -42,6 +46,7 @@ public class MainScreen extends AppCompatActivity {
     public void onStart(){
         super.onStart();
         Log.d("START","start");
+        setFont();
 
         /*TODO: When selector is implemented
         if(checkDoorsConfigured()){
@@ -75,23 +80,29 @@ public class MainScreen extends AppCompatActivity {
     For use when selectos will be implemented. Until then, enable/disable isn't visible.
      */
     private void allowReleaseTVirus() {
-        releaseVirus.setEnabled(true);
+        startGame.setEnabled(true);
     }
 
     private void disableReleaseTVirus() {
-        releaseVirus.setEnabled(false);
+        startGame.setEnabled(false);
     }
 
     public void setFont(){
-        Button button = (Button) findViewById(R.id.btnStartGame);
+        startGame = (Button) findViewById(R.id.btnStartGame);
         Typeface font = Typeface.createFromAsset(getAssets(), "JLSSpaceGothicR_NC.otf");
-        button.setTypeface(font);
+        startGame.setTypeface(font);
+
+        if(!escapeRoom){
+            startGame.setText(R.string.startGame2);
+        }
+        else{
+            startGame.setText(R.string.startGame);
+        }
     }
 
     public void adminPass(View v){
         Intent adminDoors = new Intent(this, AdminDoorPasswords.class);
-        adminDoors.putExtra("escapeRoom",true);
-        //startActivityForResult(adminDoors,RE_PABLOCHRUN_COM_REOPENDOORS_IHM_ADMINDOORS);
+        adminDoors.putExtra("escapeRoom",escapeRoom);
         startActivity(adminDoors);
     }
 
@@ -116,8 +127,15 @@ public class MainScreen extends AppCompatActivity {
         int door1Stored = sharedPref.getInt(DOOR_1,0);
         int door2Stored = sharedPref.getInt(DOOR_2,0);
 
-        if(door1Stored != 0 && door2Stored != 0){
-            configured = true;
+        if(escapeRoom){
+            if(door1Stored != 0){
+                configured = true;
+            }
+        }
+        else{
+            if(door2Stored != 0){
+                configured = true;
+            }
         }
 
         return configured;
@@ -125,10 +143,13 @@ public class MainScreen extends AppCompatActivity {
 
     public void startGame(View v){
         Log.d("Click","click start game");
-        Intent i = new Intent(this,DoorOnePass.class);
+        Intent i;
+        if(escapeRoom){
+             i = new Intent(this,DoorOnePass.class);
+        }
+        else{
+            i = new Intent(this,DoorTwoPass.class);
+        }
         startActivity(i);
-
-
     }
-
 }

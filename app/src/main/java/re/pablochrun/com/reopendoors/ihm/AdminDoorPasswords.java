@@ -69,7 +69,7 @@ public class AdminDoorPasswords extends Activity {
     }
 
     public void cancelAdmin(View v){
-        //setResult(MainScreen.CONFIG_CANCEL);
+        //setResult(MainScreenGames.CONFIG_CANCEL);
         finish();
     }
 
@@ -79,7 +79,7 @@ public class AdminDoorPasswords extends Activity {
             if(et1.getText() != null && !et1.getText().toString().equals("")) {
                 SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putInt(MainScreen.DOOR_1, Integer.parseInt(et1.getText().toString()));
+                editor.putInt(MainScreenGames.DOOR_1, Integer.parseInt(et1.getText().toString()));
                 editor.commit();
                 finish();
             }
@@ -88,10 +88,10 @@ public class AdminDoorPasswords extends Activity {
             }
         }
         else{
-            if(et2.getText() != null && !et1.getText().toString().equals("")) {
+            if(et2.getText() != null && !et2.getText().toString().equals("")) {
                 SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putInt(MainScreen.DOOR_2, Integer.parseInt(et2.getText().toString()));
+                editor.putInt(MainScreenGames.DOOR_2, Integer.parseInt(et2.getText().toString()));
                 editor.commit();
                 finish();
             }
