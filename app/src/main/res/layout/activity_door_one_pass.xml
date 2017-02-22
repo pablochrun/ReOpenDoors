@@ -81,7 +81,7 @@
             android:id="@+id/countdown"
             android:text="AAA"
             android:textSize="30sp"
-            android:textColor="@color/countdown"
+            android:textColor="@color/countdown_1"
             >
 
 

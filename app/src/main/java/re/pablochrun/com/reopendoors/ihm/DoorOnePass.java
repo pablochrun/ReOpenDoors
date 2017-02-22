@@ -1,9 +1,11 @@
 package re.pablochrun.com.reopendoors.ihm;
 
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.icu.util.TimeUnit;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.widget.GridView;
 import android.widget.TextView;
@@ -56,6 +58,13 @@ public class DoorOnePass extends DoorPassParent{
                 String countdownFormatted = getString(R.string.spreadingIn, countdownUpdated);
 
                 tvCountdown.setText(countdownFormatted);
+
+                if(minutes <=30){
+                    tvCountdown.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.countdown_2));
+                }
+                if (minutes<=10){
+                    tvCountdown.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.countdown_3));
+                }
             }
 
             public void onFinish() {
@@ -67,7 +76,6 @@ public class DoorOnePass extends DoorPassParent{
 
     public void onClickGridItem(String textToAppend){
         String passWrited = tv.getText().toString();
-
         if(passWrited != null){
             passWrited += textToAppend;
         }
@@ -75,6 +83,7 @@ public class DoorOnePass extends DoorPassParent{
             passWrited = textToAppend;
         }
         tv.setText(passWrited);
+
     }
 
 

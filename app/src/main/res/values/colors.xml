@@ -23,5 +23,10 @@
 
     <color name="select_game">#DF9310</color>
 
-    <color name="countdown">#8A0707</color>
+    <color name="countdown_1">#FFFFFF</color>
+    <color name="countdown_2">#DF9310</color>
+    <color name="countdown_3">#8A0707</color>
+
+    <color name="colorBackgroundTick">#5AC73F</color>
+
 </resources>

@@ -14,7 +14,7 @@ public class DoorPassParent extends AppCompatActivity {
     GridView gv;
     TextView tv, tvUpper;
     public static String [] values={"1","2","3","4","5","6","7","8","9","","0",""};
-    public static int [] intValues =  {1,2};
+    public static int [] intValues =  {};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +27,29 @@ public class DoorPassParent extends AppCompatActivity {
         tv.setTypeface(font);
     }
 
-    public void onClickGridItem(String textToAppend){
-        String passWrited = tv.getText().toString();
+    public void onClickGridItem(String textToAppend, int position){
 
-        if(passWrited != null){
-            passWrited += textToAppend;
+        if(position == 9){
+            String passWrited = tv.getText().toString();
+            if(passWrited != null && !passWrited.equals("")) {
+                passWrited = passWrited.substring(0, passWrited.length() - 1);
+                tv.setText(passWrited);
+            }
+        }
+        else if (position == 11){
+
         }
         else{
-            passWrited = textToAppend;
+            String passWrited = tv.getText().toString();
+            if(passWrited != null){
+                passWrited += textToAppend;
+            }
+            else{
+                passWrited = textToAppend;
+            }
+            tv.setText(passWrited);
         }
-        tv.setText(passWrited);
+
+
     }
 }

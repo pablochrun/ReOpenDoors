@@ -2,10 +2,12 @@ package re.pablochrun.com.reopendoors.adapter;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import re.pablochrun.com.reopendoors.R;
@@ -53,7 +55,7 @@ public class CustomGridAdapter extends BaseAdapter {
     public class Holder
     {
         TextView tv;
-        //ImageView img;
+        ImageView img;
     }
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
@@ -63,7 +65,7 @@ public class CustomGridAdapter extends BaseAdapter {
 
         rowView = inflater.inflate(R.layout.custom_grid_item, null);
         holder.tv=(TextView) rowView.findViewById(R.id.textViewGrid);
-        //holder.img=(ImageView) rowView.findViewById(R.id.imageView1);
+        holder.img=(ImageView) rowView.findViewById(R.id.imageViewGridView);
 
         holder.tv.setText(result[position]);
         //holder.img.setImageResource(imageId[position]);
@@ -71,12 +73,18 @@ public class CustomGridAdapter extends BaseAdapter {
         Typeface font = Typeface.createFromAsset(context.getAssets(), "JLSSpaceGothicR_NC.otf");
         holder.tv.setTypeface(font);
 
+        if (position == 9) {
+            holder.tv.setBackgroundResource(R.drawable.background_drawable_delete);
+        }
+        if(position==11){
+            holder.tv.setBackgroundResource(R.drawable.background_drawable_tick);
+        }
+
         rowView.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                // TODO Auto-generated method stub
-                ((DoorPassParent)context).onClickGridItem(result[position]);
+                ((DoorPassParent)context).onClickGridItem(result[position], position);
             }
         });
 
