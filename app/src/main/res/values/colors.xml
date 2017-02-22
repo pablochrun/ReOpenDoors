@@ -29,4 +29,7 @@
 
     <color name="colorBackgroundTick">#5AC73F</color>
 
+    <color name="infected">#AAAAAA</color>
+    <color name="mansion_destroyed">#CCCC00</color>
+
 </resources>

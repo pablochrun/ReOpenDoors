@@ -2,6 +2,7 @@ package re.pablochrun.com.reopendoors.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 /**
  * Created by pablo.covarrubias on 22/02/2017.
@@ -75,5 +76,22 @@ public class PreferenceUtils {
             editor.putInt(DOOR_2, Integer.parseInt(doorPassWrited));
             editor.commit();
         }
+    }
+
+    public boolean checkPassCorrect(boolean escapeRoom, int password){
+        boolean passCorrect = false;
+
+        SharedPreferences sharedPref = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE);
+        int passStored;
+
+        if(escapeRoom){
+            passStored = sharedPref.getInt(DOOR_1,0);
+        }
+        else{
+            passStored = sharedPref.getInt(DOOR_2,0);
+        }
+
+        passCorrect = (password==passStored)?true:false;
+        return passCorrect;
     }
 }

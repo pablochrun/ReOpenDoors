@@ -17,9 +17,11 @@
     <string name="upperMessage">Door locked.\nRestringed access.</string>
     <string name="spreadingIn">Spreading T-Virus in : %1$s</string>
 
-    <string name="infectados">You are infected.</string>
-
-
     <string name="escape_room">ESCAPE ROOM</string>
     <string name="juego_2_name">JUEGO_2_NAME</string>
+
+    <string name="mansion_destroyed">¡YOU DID IT!\nTHE U3CM HAVE DESTROYED THE MANSION.</string>
+    <string name="infectados">All you are infected.</string>
+    <string name="password_wrong">Wrong password.</string>
+    <string name="door_opened">The door is open now!</string>
 </resources>

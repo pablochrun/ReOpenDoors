@@ -3,8 +3,12 @@ package re.pablochrun.com.reopendoors.ihm;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import re.pablochrun.com.reopendoors.R;
 import re.pablochrun.com.reopendoors.adapter.CustomGridAdapter;
@@ -27,29 +31,24 @@ public class DoorPassParent extends AppCompatActivity {
         tv.setTypeface(font);
     }
 
-    public void onClickGridItem(String textToAppend, int position){
-
-        if(position == 9){
-            String passWrited = tv.getText().toString();
-            if(passWrited != null && !passWrited.equals("")) {
-                passWrited = passWrited.substring(0, passWrited.length() - 1);
-                tv.setText(passWrited);
-            }
-        }
-        else if (position == 11){
-
-        }
-        else{
-            String passWrited = tv.getText().toString();
-            if(passWrited != null){
-                passWrited += textToAppend;
-            }
-            else{
-                passWrited = textToAppend;
-            }
-            tv.setText(passWrited);
-        }
+    public void onClickGridItem(String textToAppend, int position){}
 
 
+    public void showCustomToast(int messageId,int duration, int color){
+        LayoutInflater inflater=getLayoutInflater();
+        View customToastView =inflater.inflate(R.layout.custom_toast, null);
+
+        TextView text = (TextView) customToastView.findViewById(R.id.custom_toast_tv);
+        text.setText(getResources().getString(messageId));
+        text.setTextSize(35.0f);
+        text.setTextColor(getResources().getColor(R.color.mansion_destroyed));
+        Typeface font = Typeface.createFromAsset(getAssets(), "JLSSpaceGothicR_NC.otf");
+        text.setTypeface(font);
+
+        final Toast customToast=new Toast(this);
+        customToast.setGravity(Gravity.CENTER,0, 0);
+        customToast.setDuration(duration);
+        customToast.setView(customToastView);
+        customToast.show();
     }
 }
