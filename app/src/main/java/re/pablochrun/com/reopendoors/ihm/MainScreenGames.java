@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 
 import re.pablochrun.com.reopendoors.R;
+import re.pablochrun.com.reopendoors.utils.PreferenceUtils;
 
 public class MainScreenGames extends AppCompatActivity {
 
@@ -26,6 +27,8 @@ public class MainScreenGames extends AppCompatActivity {
 
     boolean escapeRoom;
 
+    PreferenceUtils pu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +36,7 @@ public class MainScreenGames extends AppCompatActivity {
         Intent i = getIntent();
         escapeRoom = i.getBooleanExtra("escapeRoom",false);
         //startGame = (Button) findViewById(R.id.btnStartGame);
+        pu = new PreferenceUtils(this);
 
     }
 
@@ -106,22 +110,12 @@ public class MainScreenGames extends AppCompatActivity {
         startActivity(adminDoors);
     }
 
-    /*
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data){
-        super.onActivityResult(requestCode,resultCode,data);
-        if(requestCode == RE_PABLOCHRUN_COM_REOPENDOORS_IHM_ADMINDOORS){
-            if(checkDoorsConfigured()){
-                allowReleaseTVirus();
-            }
-            else{
-                disableReleaseTVirus();
-            }
-        }
-    }
-    */
 
     public boolean checkDoorsConfigured(){
+
+        boolean configured =pu.checkDoorsConfigured(escapeRoom);
+        return configured;
+        /*
         boolean configured = false;
         SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         int door1Stored = sharedPref.getInt(DOOR_1,0);
@@ -139,6 +133,7 @@ public class MainScreenGames extends AppCompatActivity {
         }
 
         return configured;
+        */
     }
 
     public void startGame(View v){

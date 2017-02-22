@@ -20,10 +20,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import re.pablochrun.com.reopendoors.R;
+import re.pablochrun.com.reopendoors.utils.PreferenceUtils;
 
 public class LoginMain extends AppCompatActivity {
 
     public final String LOGIN_PASS="LOGIN";
+    PreferenceUtils pu;
 
     public LoginMain() {
     }
@@ -32,19 +34,10 @@ public class LoginMain extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_main);
-        initPreferences();
+        pu = new PreferenceUtils(this);
+        pu.initPreferences();
         setFont();
     }
-
-    public void initPreferences(){
-        SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        if(!sharedPref.contains(LOGIN_PASS)){
-            SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putInt(LOGIN_PASS, 111111);
-            editor.commit();
-        }
-    }
-
 
     public void setFont(){
         Button button = (Button) findViewById(R.id.btLogin);
@@ -57,13 +50,10 @@ public class LoginMain extends AppCompatActivity {
 
         EditText et = (EditText) findViewById(R.id.etPassword);
         String password = et.getText().toString();
-        SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        int passStored = sharedPref.getInt(LOGIN_PASS,0);
 
-        if( password != null && !password.equals("")
-                && Integer.parseInt(password)==passStored){
-            //NEW ACTIVITY TO ADMIN DOORs PASSWORDS.
-            //Intent mainScreen = new Intent(this, MainScreenGames.class);
+        loginOK = pu.checkLogin(password);
+
+        if( loginOK){
             Intent gameSelectorScreen = new Intent(this, GameSelectorScreen.class);
             startActivity(gameSelectorScreen);
         }
@@ -88,7 +78,4 @@ public class LoginMain extends AppCompatActivity {
         customToast.show();
     }
 
-    public void onActivityResult(){
-
-    }
 }

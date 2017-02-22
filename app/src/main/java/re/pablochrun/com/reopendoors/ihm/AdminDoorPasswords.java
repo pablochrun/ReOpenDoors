@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import re.pablochrun.com.reopendoors.R;
+import re.pablochrun.com.reopendoors.utils.PreferenceUtils;
 
 /**
  * Created by pablo.covarrubias on 15/02/2017.
@@ -26,6 +27,8 @@ public class AdminDoorPasswords extends Activity {
     EditText et2;
 
     boolean escapeRoomMode;
+
+    PreferenceUtils pu;
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -40,6 +43,9 @@ public class AdminDoorPasswords extends Activity {
         }
 
         setFont(escapeRoomMode);
+
+        pu = new PreferenceUtils(this);
+
     }
 
     public void setFont(boolean escapeRoomMode){
@@ -77,10 +83,7 @@ public class AdminDoorPasswords extends Activity {
 
         if(escapeRoomMode){
             if(et1.getText() != null && !et1.getText().toString().equals("")) {
-                SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putInt(MainScreenGames.DOOR_1, Integer.parseInt(et1.getText().toString()));
-                editor.commit();
+                pu.setDoorPassword(escapeRoomMode,et1.getText().toString());
                 finish();
             }
             else{
@@ -89,10 +92,7 @@ public class AdminDoorPasswords extends Activity {
         }
         else{
             if(et2.getText() != null && !et2.getText().toString().equals("")) {
-                SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putInt(MainScreenGames.DOOR_2, Integer.parseInt(et2.getText().toString()));
-                editor.commit();
+                pu.setDoorPassword(escapeRoomMode,et2.getText().toString());
                 finish();
             }
             else{
