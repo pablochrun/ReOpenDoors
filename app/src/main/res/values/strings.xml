@@ -17,11 +17,13 @@
     <string name="upperMessage">Puerta bloqueada.\nAccesibilidad limitada.</string>
     <string name="spreadingIn">Liberando T-Virus en : %1$s</string>
 
-    <string name="escape_room">Asesinato en La Guarida del Oso</string>
-    <string name="juego_2_name">Escape en las montañas</string>
-    
+    <string name="juego_2_name">Asesinato en La Guarida del Oso</string>
+    <string name="escape_room">Escape en las montañas</string>
+
     <string name="mansion_destroyed">¡LO CONSEGUISTEIS!\nLOS U3CM HABEIS DESTRUIDO LA MANSION.</string>
     <string name="infectados">Estais infectados.</string>
     <string name="password_wrong">Contraseña Incorrecta</string>
     <string name="door_opened">La puerta está abierta!</string>
+
+    <string name="riddle_popup">AAABBBBCCCDDDD</string>
 </resources>

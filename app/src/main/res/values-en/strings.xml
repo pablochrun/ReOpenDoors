@@ -17,11 +17,13 @@
     <string name="upperMessage">Door locked.\nRestringed access.</string>
     <string name="spreadingIn">Spreading T-Virus in : %1$s</string>
 
-    <string name="escape_room">Asesinato en La Guarida del Oso</string>
-    <string name="juego_2_name">Escape en las montañas</string>
+    <string name="juego_2_name">Asesinato en La Guarida del Oso</string>
+    <string name="escape_room">Escape en las montañas</string>
 
     <string name="mansion_destroyed">¡YOU DID IT!\nTHE U3CM HAVE DESTROYED THE MANSION.</string>
     <string name="infectados">All you are infected.</string>
     <string name="password_wrong">Wrong password.</string>
     <string name="door_opened">The door is open now!</string>
+
+    <string name="riddle_popup">AAABBBBCCCDDDD</string>
 </resources>
