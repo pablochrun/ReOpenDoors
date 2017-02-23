@@ -33,4 +33,6 @@
     <color name="mansion_destroyed">#00FF00</color>
 
     <color name="remarked">#00FFFF</color>
+
+    <color name="riddle_color_text">#FA8072</color>
 </resources>

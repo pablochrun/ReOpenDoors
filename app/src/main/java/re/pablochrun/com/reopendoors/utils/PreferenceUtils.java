@@ -26,7 +26,7 @@ public class PreferenceUtils {
         SharedPreferences sharedPref = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE);
         if(!sharedPref.contains(LOGIN_PASS)){
             SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putInt(LOGIN_PASS, 111111);
+            editor.putInt(LOGIN_PASS, 28221720);
             editor.apply();
         }
     }
