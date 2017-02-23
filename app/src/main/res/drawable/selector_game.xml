@@ -2,14 +2,14 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:state_enabled="false"
-        android:drawable="@drawable/login_background_drawable_disabled"
+        android:drawable="@drawable/game_background_drawable_disabled"
         />
     <item
         android:state_pressed="true"
-        android:drawable="@drawable/login_background_drawable_pressed"
+        android:drawable="@drawable/game_background_drawable_pressed"
         />
     <item
         android:state_enabled="true"
-        android:drawable="@drawable/login_background_drawable"
+        android:drawable="@drawable/game_background_drawable"
         />
 </selector>

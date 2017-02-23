@@ -6,9 +6,9 @@
 
     <color name="colorLogin">#5AC73F</color>
     <color name="loginScreenBackground">#000000</color>
-    <color name="colorLoginDisabled">#E0E0E0</color>
+    <color name="colorButtonDisabled">#E0E0E0</color>
     <color name="loginScreenBackgroundDisabled">#000000</color>
-    <color name="colorLoginPressed">#006600</color>
+    <color name="colorButtonPressed">#0066ff</color>
     <color name="loginScreenBackgroundPressed">#000000</color>
 
     <color name="colorErrorLogin">#8A0707</color>
@@ -29,7 +29,7 @@
 
     <color name="colorBackgroundTick">#5AC73F</color>
 
-    <color name="infected">#AAAAAA</color>
-    <color name="mansion_destroyed">#CCCC00</color>
+    <color name="infected">#FF8C00</color>
+    <color name="mansion_destroyed">#00FF00</color>
 
 </resources>

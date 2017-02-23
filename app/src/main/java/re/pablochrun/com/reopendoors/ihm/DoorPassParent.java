@@ -1,6 +1,7 @@
 package re.pablochrun.com.reopendoors.ihm;
 
 import android.graphics.Typeface;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -41,7 +42,7 @@ public class DoorPassParent extends AppCompatActivity {
         TextView text = (TextView) customToastView.findViewById(R.id.custom_toast_tv);
         text.setText(getResources().getString(messageId));
         text.setTextSize(35.0f);
-        text.setTextColor(getResources().getColor(R.color.mansion_destroyed));
+        text.setTextColor(ContextCompat.getColor(getApplicationContext(), color));
         Typeface font = Typeface.createFromAsset(getAssets(), "JLSSpaceGothicR_NC.otf");
         text.setTypeface(font);
 

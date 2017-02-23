@@ -52,10 +52,10 @@ public class DoorOnePass extends DoorPassParent{
 
                 tvCountdown.setText(countdownFormatted);
 
-                if(minutes <=30){
+                if(minutes <=29){
                     tvCountdown.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.countdown_2));
                 }
-                if (minutes<=10){
+                if (minutes<=9){
                     tvCountdown.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.countdown_3));
                 }
             }

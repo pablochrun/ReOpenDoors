@@ -23,7 +23,7 @@
         android:right="1dp"
         android:top="1dp"
         android:width="30dp"
-        android:height="30dp"
+        android:height="35dp"
         android:gravity="center">
     </item>
 </layer-list>

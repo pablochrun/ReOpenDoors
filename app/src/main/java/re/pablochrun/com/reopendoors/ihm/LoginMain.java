@@ -53,6 +53,7 @@ public class LoginMain extends AppCompatActivity {
 
         loginOK = pu.checkLogin(password);
 
+        Log.d("Button pressed: " + ((Button)v).isPressed(), "Button enable: " + ((Button)v).isEnabled());
         if( loginOK){
             Intent gameSelectorScreen = new Intent(this, GameSelectorScreen.class);
             startActivity(gameSelectorScreen);
