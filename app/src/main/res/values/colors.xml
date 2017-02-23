@@ -35,4 +35,5 @@
     <color name="remarked">#00FFFF</color>
 
     <color name="riddle_color_text">#FA8072</color>
+    <color name="riddle_title_color_text">#D2691E</color>
 </resources>

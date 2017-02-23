@@ -82,8 +82,10 @@ public class LoginMain extends AppCompatActivity {
         riddleWindow.showAtLocation(anchor, Gravity.CENTER, 0, 0);
 
         TextView riddleTV = (TextView) contentView.findViewById(R.id.riddle_text);
+        TextView helloSergio = (TextView) contentView.findViewById(R.id.hello_sergio);
         Typeface font = Typeface.createFromAsset(getAssets(), "JLSSpaceGothicR_NC.otf");
         riddleTV.setTypeface(font);
+        helloSergio.setTypeface(font);
 
     }
 

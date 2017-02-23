@@ -25,5 +25,6 @@
     <string name="password_wrong">Wrong password.</string>
     <string name="door_opened">The door is open now!</string>
 
-    <string name="riddle_popup">AAABBBBCCCDDDD</string>
+    <string name="riddle_popup">1, 1, 2, 4, 8, 16, 23, XX\n\n 6, 15, 35, 77, 143, XXX\n\n1, 1, 2, 6, 24, 120, XXX</string>
+    <string name="hello_sergio">Hello Sergio. We are gonna play a game...</string>
 </resources>

@@ -26,4 +26,6 @@
     <string name="door_opened">La puerta está abierta!</string>
 
     <string name="riddle_popup">1, 1, 2, 4, 8, 16, 23, XX\n\n 6, 15, 35, 77, 143, XXX\n\n1, 1, 2, 6, 24, 120, XXX</string>
+    <string name="hello_sergio">Hola Sergio. Vamos a jugar a un juego..</string>
+
 </resources>
