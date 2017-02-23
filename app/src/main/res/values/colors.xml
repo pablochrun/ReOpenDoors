@@ -32,4 +32,5 @@
     <color name="infected">#FF8C00</color>
     <color name="mansion_destroyed">#00FF00</color>
 
+    <color name="remarked">#00FFFF</color>
 </resources>

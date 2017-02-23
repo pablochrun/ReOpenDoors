@@ -4,11 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import re.pablochrun.com.reopendoors.R;
 import re.pablochrun.com.reopendoors.utils.PreferenceUtils;
@@ -24,7 +26,7 @@ public class MainScreenGames extends AppCompatActivity {
     public static final int CONFIG_CANCEL=2;
 
     public Button startGame;
-
+    public ImageView setupImage;
     boolean escapeRoom;
 
     PreferenceUtils pu;
@@ -37,7 +39,7 @@ public class MainScreenGames extends AppCompatActivity {
         escapeRoom = i.getBooleanExtra("escapeRoom",false);
         //startGame = (Button) findViewById(R.id.btnStartGame);
         pu = new PreferenceUtils(this);
-
+        setupImage = (ImageView) findViewById(R.id.imageSetup);
     }
 
     @Override
@@ -52,14 +54,13 @@ public class MainScreenGames extends AppCompatActivity {
         Log.d("START","start");
         setFont();
 
-        /*TODO: When selector is implemented
         if(checkDoorsConfigured()){
             allowReleaseTVirus();
         }
         else{
             disableReleaseTVirus();
         }
-        */
+
     }
 
     @Override
@@ -85,10 +86,12 @@ public class MainScreenGames extends AppCompatActivity {
      */
     private void allowReleaseTVirus() {
         startGame.setEnabled(true);
+        setupImage.setBackground(ContextCompat.getDrawable(this,R.drawable.drawable_umbrella_corp));
     }
 
     private void disableReleaseTVirus() {
         startGame.setEnabled(false);
+        setupImage.setBackground(ContextCompat.getDrawable(this,R.drawable.drawable_umbrella_corp_remarked));
     }
 
     public void setFont(){
@@ -112,28 +115,8 @@ public class MainScreenGames extends AppCompatActivity {
 
 
     public boolean checkDoorsConfigured(){
-
         boolean configured =pu.checkDoorsConfigured(escapeRoom);
         return configured;
-        /*
-        boolean configured = false;
-        SharedPreferences sharedPref = this.getPreferences(Context.MODE_PRIVATE);
-        int door1Stored = sharedPref.getInt(DOOR_1,0);
-        int door2Stored = sharedPref.getInt(DOOR_2,0);
-
-        if(escapeRoom){
-            if(door1Stored != 0){
-                configured = true;
-            }
-        }
-        else{
-            if(door2Stored != 0){
-                configured = true;
-            }
-        }
-
-        return configured;
-        */
     }
 
     public void startGame(View v){
