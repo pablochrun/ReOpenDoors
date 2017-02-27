@@ -12,18 +12,6 @@
         android:layout_marginBottom="5dp"
         android:background="@color/doorScreenText"
         >
-
-        <!--
-        <ImageView
-            android:id="@+id/imageUmbrellaInPassScreen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentStart="true"
-            android:src="@drawable/umbrella_corp"
-            android:onClick="adminPass"/>
-        -->
-
         <TextView
             android:id="@+id/textScreenUpper"
             android:layout_width="wrap_content"
@@ -32,19 +20,18 @@
 
             android:textSize="10sp"
             android:text="@string/upperMessage"
-            android:textColor="@color/gridItemNumber"
+            android:textColor="@color/game_2_password_screen_text_color"
             />
-
 
         <TextView
             android:id="@+id/textScreenPass"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textColor="@color/gridItemNumber"
-            android:hint="@string/tvScreenPassHint"
-            android:textColorHint="@color/gridItemNumber"
+            android:textColor="@color/game_2_password_screen_text_color"
+            android:hint="@string/codeMuga"
+            android:textColorHint="@color/game_2_password_screen_text_color"
             android:gravity="bottom|left"
-            android:textSize="40sp"
+            android:textSize="30sp"
             />
 
 
@@ -76,7 +63,13 @@
         android:layout_height="0dp"
         android:layout_weight="1">
 
-        <!-- Place countdown here -->
+        <ImageView
+            android:id="@+id/imageKnifeGame2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/knife"/>
+
     </RelativeLayout>
 
 

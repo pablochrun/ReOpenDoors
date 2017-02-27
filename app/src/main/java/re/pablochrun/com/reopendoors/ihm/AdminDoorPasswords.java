@@ -46,6 +46,12 @@ public class AdminDoorPasswords extends Activity {
 
         pu = new PreferenceUtils(this);
 
+        if(et1 != null){
+            et1.setSelection(et1.getText().length());
+        }
+        else if (et2 != null){
+            et2.setSelection(et2.getText().length());
+        }
     }
 
     public void setFont(boolean escapeRoomMode){

@@ -13,6 +13,8 @@
     <string name="securityIncomplet">Incomplet security.\nPlease check the password.</string>
     <string name="gridText">_</string>
     <string name="tvScreenPassHint">Enter password</string>
+    <string name="codeMuga">Introducir Muga-password</string>
+
     <string name="umbrellaCorp">Umbrella Corp.\nSpreading T-Virus\nStarting countdown 60 minutes</string>
     <string name="upperMessage">Door locked.\nRestringed access.</string>
     <string name="spreadingIn">Spreading T-Virus in : %1$s</string>
@@ -22,6 +24,11 @@
 
     <string name="mansion_destroyed">¡YOU DID IT!\nTHE U3CM HAVE DESTROYED THE MANSION.</string>
     <string name="infectados">All you are infected.</string>
+
+    <string name="timeout_infected">Se os acabó el tiempo.</string>
+    <string name="infected_escape_riddle">Dad gracias que no está Efrén. Lo que su mente zombificada pueda pensar no tendría solución posible</string>
+
+
     <string name="password_wrong">Wrong password.</string>
     <string name="door_opened">The door is open now!</string>
 

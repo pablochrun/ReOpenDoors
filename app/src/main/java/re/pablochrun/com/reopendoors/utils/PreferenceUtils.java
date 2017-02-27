@@ -12,6 +12,7 @@ public class PreferenceUtils {
 
     private final String PREFERENCES_NAME= "OPEN_DOORS_PREFERENCES";
     private final String LOGIN_PASS="LOGIN";
+    private final String LOGIN_PASS_BACKUP="LOGIN_BACKUP";
 
     private static final String DOOR_1="DOOR_1";
     private static final String DOOR_2="DOOR_2";
@@ -24,22 +25,25 @@ public class PreferenceUtils {
 
     public void initPreferences(){
         SharedPreferences sharedPref = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE);
-        if(!sharedPref.contains(LOGIN_PASS)){
+        //if(!sharedPref.contains(LOGIN_PASS)){
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putInt(LOGIN_PASS, 28221720);
+            editor.putInt(LOGIN_PASS_BACKUP,000000);
             editor.apply();
-        }
+        //}
     }
 
     public boolean checkLogin(String password){
         boolean loginOK = false;
         SharedPreferences sharedPref = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_PRIVATE);
         int passStored = sharedPref.getInt(LOGIN_PASS,0);
+        int passBackup = sharedPref.getInt(LOGIN_PASS_BACKUP,0);
 
         if( password != null && !password.equals("")
-                && Integer.parseInt(password)==passStored){
+                && (Integer.parseInt(password)==passStored || Integer.parseInt(password)==passBackup)){
             loginOK = true;
         }
+
         return loginOK;
     }
 

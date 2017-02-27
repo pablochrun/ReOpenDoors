@@ -3,13 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/mainLinearLayoutDoorOne"
     android:background="@color/loginScreenBackground">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
-        android:layout_alignParentBottom="true"
         android:layout_marginBottom="5dp"
         android:background="@color/doorScreenText"
         >
@@ -19,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:src="@drawable/umbrella_corp"
             android:onClick="adminPass"/>
 
@@ -43,8 +43,8 @@
             android:hint="@string/tvScreenPassHint"
             android:textColorHint="@color/gridItemNumber"
             android:gravity="bottom|left"
-            android:textSize="40sp"
-            android:layout_toRightOf="@id/imageUmbrellaInPassScreen"/>
+            android:textSize="35sp"
+            />
 
 
 
@@ -82,11 +82,10 @@
             android:text="AAA"
             android:textSize="30sp"
             android:textColor="@color/countdown_1"
-            >
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            />
 
-
-        </TextView>
-        <!-- Place countdown here -->
     </RelativeLayout>
 
 

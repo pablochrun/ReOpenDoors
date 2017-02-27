@@ -28,7 +28,7 @@ public class DoorTwoPass extends DoorPassParent {
         tvUpper = (TextView) findViewById(R.id.textScreenUpper);
         tvUpper.setTypeface(font);
         gv=(GridView) findViewById(R.id.gridView2);
-        gv.setAdapter(new CustomGridAdapter(this, values,intValues));
+        gv.setAdapter(new CustomGridAdapter(this, values,intValues, false));
     }
 
     @Override

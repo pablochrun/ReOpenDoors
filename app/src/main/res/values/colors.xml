@@ -11,6 +11,7 @@
     <color name="colorButtonPressed">#0066ff</color>
     <color name="loginScreenBackgroundPressed">#000000</color>
 
+    <color name="game2backgroundColor">#FFFFFF</color>
     <color name="colorErrorLogin">#8A0707</color>
 
     <color name="toast_gradient_start">#363D34</color>
@@ -33,7 +34,12 @@
     <color name="mansion_destroyed">#00FF00</color>
 
     <color name="remarked">#00FFFF</color>
+    <color name="main_screen_game_2">#00FFFF</color>
+    <color name="game_2_grid_color_text">#00FFFF</color>
+    <color name="game_2_password_screen_text_color">#191970</color>
 
-    <color name="riddle_color_text">#FA8072</color>
-    <color name="riddle_title_color_text">#D2691E</color>
+    <color name="riddle_color_text">#FF0000</color>
+    <color name="riddle_title_color_text">#FFFFFF</color>
+    <color name="riddle_border">#FFFFFF</color>
+    <color name="riddle_background">#000000</color>
 </resources>

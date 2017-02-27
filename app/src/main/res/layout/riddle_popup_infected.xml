@@ -1,6 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/drawable_riddle_popup">
+     
+    <RelativeLayout
+        android:id="@+id/relative_riddle_infected"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/drawable_riddle_separator">
 
+        <TextView
+            android:id="@+id/title_riddle_infected"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/riddle_title_color_text"
+            android:textSize="30sp"
+            android:gravity="center_horizontal"
+            android:text="@string/timeout_infected"
+            />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relative_riddle_infected_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="3"
+        >
+        <TextView
+            android:id="@+id/riddle_infected_text"
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/infected_escape_riddle"
+            android:textColor="@color/riddle_color_text"
+            android:textSize="25sp"
+            />
+    </RelativeLayout>
 </LinearLayout>

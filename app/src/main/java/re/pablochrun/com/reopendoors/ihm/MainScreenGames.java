@@ -3,6 +3,8 @@ package re.pablochrun.com.reopendoors.ihm;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
+import android.content.res.XmlResourceParser;
 import android.graphics.Typeface;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import re.pablochrun.com.reopendoors.R;
 import re.pablochrun.com.reopendoors.utils.PreferenceUtils;
@@ -30,16 +33,28 @@ public class MainScreenGames extends AppCompatActivity {
     boolean escapeRoom;
 
     PreferenceUtils pu;
+    LinearLayout mainLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_screen_games);
         Intent i = getIntent();
         escapeRoom = i.getBooleanExtra("escapeRoom",false);
+
+        if(escapeRoom)
+            setContentView(R.layout.activity_main_screen_games);
+        else
+            setContentView(R.layout.activity_main_screen_game_2);
+
         //startGame = (Button) findViewById(R.id.btnStartGame);
         pu = new PreferenceUtils(this);
+
         setupImage = (ImageView) findViewById(R.id.imageSetup);
+
+        if(escapeRoom) {
+            mainLayout = (LinearLayout) findViewById(R.id.activity_main_screen);
+            mainLayout.setBackgroundResource(R.drawable.broken_test_tube);
+        }
     }
 
     @Override
@@ -60,7 +75,6 @@ public class MainScreenGames extends AppCompatActivity {
         else{
             disableReleaseTVirus();
         }
-
     }
 
     @Override
@@ -86,25 +100,28 @@ public class MainScreenGames extends AppCompatActivity {
      */
     private void allowReleaseTVirus() {
         startGame.setEnabled(true);
-        setupImage.setBackground(ContextCompat.getDrawable(this,R.drawable.drawable_umbrella_corp));
+        if(escapeRoom){
+            setupImage.setBackground(ContextCompat.getDrawable(this,R.drawable.drawable_umbrella_corp));
+        }
+        else{
+            setupImage.setBackground(ContextCompat.getDrawable(this,R.drawable.drawable_setup));
+        }
     }
 
     private void disableReleaseTVirus() {
         startGame.setEnabled(false);
-        setupImage.setBackground(ContextCompat.getDrawable(this,R.drawable.drawable_umbrella_corp_remarked));
+        if(escapeRoom){
+            setupImage.setBackground(ContextCompat.getDrawable(this,R.drawable.drawable_umbrella_corp_remarked));
+        }
+        else{
+            setupImage.setBackground(ContextCompat.getDrawable(this,R.drawable.drawable_setup_remarked));
+        }
     }
 
     public void setFont(){
         startGame = (Button) findViewById(R.id.btnStartGame);
         Typeface font = Typeface.createFromAsset(getAssets(), "JLSSpaceGothicR_NC.otf");
         startGame.setTypeface(font);
-
-        if(!escapeRoom){
-            startGame.setText(R.string.startGame2);
-        }
-        else{
-            startGame.setText(R.string.startGame);
-        }
     }
 
     public void adminPass(View v){

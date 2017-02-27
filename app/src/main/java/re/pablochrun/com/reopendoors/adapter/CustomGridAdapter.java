@@ -24,14 +24,16 @@ public class CustomGridAdapter extends BaseAdapter {
     Context context;
     int [] imageId;
     private static LayoutInflater inflater=null;
+    boolean escapeRoom;
 
-    public CustomGridAdapter(DoorPassParent doorPassParent, String[] values, int[] prgmImages) {
+    public CustomGridAdapter(DoorPassParent doorPassParent, String[] values, int[] prgmImages, boolean escapeRooom) {
         // TODO Auto-generated constructor stub
         result=values;
         context=doorPassParent;
         imageId=prgmImages;
         inflater = ( LayoutInflater )context.
                 getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        this.escapeRoom = escapeRooom;
     }
 
     @Override
@@ -63,9 +65,14 @@ public class CustomGridAdapter extends BaseAdapter {
         Holder holder=new Holder();
         View rowView;
 
-        rowView = inflater.inflate(R.layout.custom_grid_item, null);
+        if(escapeRoom)
+            rowView = inflater.inflate(R.layout.custom_grid_item, null);
+        else
+            rowView = inflater.inflate(R.layout.grid_item_game_2, null);
+
         holder.tv=(TextView) rowView.findViewById(R.id.textViewGrid);
         holder.img=(ImageView) rowView.findViewById(R.id.imageViewGridView);
+        holder.img.setImageResource(0);
 
         holder.tv.setText(result[position]);
         //holder.img.setImageResource(imageId[position]);
@@ -74,11 +81,25 @@ public class CustomGridAdapter extends BaseAdapter {
         holder.tv.setTypeface(font);
 
         if (position == 9) {
-            holder.tv.setBackgroundResource(R.drawable.background_drawable_delete);
+            if(escapeRoom)
+                holder.tv.setBackgroundResource(R.drawable.background_drawable_delete);
+            else
+                holder.tv.setBackgroundResource(R.drawable.background_drawable_delete_game_2);
         }
-        if(position==11){
-            holder.tv.setBackgroundResource(R.drawable.background_drawable_tick);
+        else if(position==11){
+            if(escapeRoom)
+                holder.tv.setBackgroundResource(R.drawable.background_drawable_tick);
+            else
+                holder.tv.setBackgroundResource(R.drawable.background_drawable_tick_game_2);
+
         }
+        else{
+            if(escapeRoom)
+                holder.tv.setBackgroundResource(R.drawable.selector_start_game);
+            else
+                holder.tv.setBackgroundResource(R.drawable.selector_start_game_2);
+        }
+
 
         rowView.setOnClickListener(new View.OnClickListener() {
 

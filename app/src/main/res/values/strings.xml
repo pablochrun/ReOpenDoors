@@ -13,8 +13,9 @@
     <string name="securityIncomplet">Seguridad incompleta.\nCompruebe la contraseña.</string>
     <string name="gridText">_</string>
     <string name="tvScreenPassHint">Introduzca password</string>
-    <string name="umbrellaCorp">Umbrella Corp.\nPropagando T-Virus\nIniciando cuenta atrás de 60minutos</string>
-    <string name="upperMessage">Puerta bloqueada.\nAccesibilidad limitada.</string>
+    <string name="codeMuga">Introducir Muga-password</string>
+    <string name="umbrellaCorp">Umbrella Corp.\nPropagando T-Virus\nIniciando cuenta atrás de 60 minutos</string>
+    <string name="upperMessage">Codigo del Señor Muga necesario.\nAccesibilidad limitada.\nPodeis utilizar el comodín del publico y llamar a Efrén.\nTu Herbalife en casa.</string>
     <string name="spreadingIn">Liberando T-Virus en : %1$s</string>
 
     <string name="juego_2_name">Asesinato en La Guarida del Oso</string>
@@ -22,6 +23,9 @@
 
     <string name="mansion_destroyed">¡LO CONSEGUISTEIS!\nLOS U3CM HABEIS DESTRUIDO LA MANSION.</string>
     <string name="infectados">Estais infectados.</string>
+    <string name="timeout_infected">Se os acabó el tiempo.</string>
+    <string name="infected_escape_riddle">Dad gracias que no está Efrén. Lo que su mente zombificada pueda pensar no tendría solución posible</string>
+
     <string name="password_wrong">Contraseña Incorrecta</string>
     <string name="door_opened">La puerta está abierta!</string>
 
